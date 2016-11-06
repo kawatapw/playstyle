@@ -20,7 +20,8 @@ const (
 	Eggplant
 )
 
-var ps = [...]string{
+// Styles are string representations of the various playstyles someone can have.
+var Styles = [...]string{
 	"Mouse",
 	"Tablet",
 	"Keyboard",
@@ -37,7 +38,7 @@ func (p PlayStyle) String() string {
 	var parts []string
 
 	i := int(p)
-	for k, v := range ps {
+	for k, v := range Styles {
 		if i&(1<<uint(k)) > 0 {
 			parts = append(parts, v)
 		}
